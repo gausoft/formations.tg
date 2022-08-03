@@ -10,9 +10,18 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "autoprefixer": "^10.4.0",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.3.11",
+        "tailwindcss": "^2.2.19",
+        "tailwindcss-animatecss": "^1.0.7",
+        "tailwindcss-font-inter": "^2.0.3"
+    },
+    "dependencies": {
+        "@tailwindcss/line-clamp": "^0.2.2",
+        "postcss-import": "^14.0.2",
+        "postcss-nesting": "^10.0.2"
     }
 }

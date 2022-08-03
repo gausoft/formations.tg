@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('contact-2', [HomeController::class, 'contactSecond'])->name('contact-2');
+Route::get('/browse', [HomeController::class, 'browse']);
+Route::get('/publish', [HomeController::class, 'publish']);
+Route::get('/directory', [HomeController::class, 'directory']);
+Route::get('/categories/{slug}/trainings', [HomeController::class, 'trainingsByCategory'])->name('category.trainings');
+Route::get('/trainings/{slug}', [HomeController::class, 'trainingsDetails'])->name('trainings.show');
+
+
+Route::get('/trainers', function () {
+    return view('pages/trainers');
+});
+
+Route::get('/trainers/{slug}', function () {
+    return view('pages/trainer-page');
+});
+
+Route::get('/training-centers', function () {
+    return view('pages/training-centers');
+});
+
+Route::get('/modals', function () {
+    return view('modals');
 });
